@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="principal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Rede Animal</title>
+</head>
+<style>
+    .btn-info{
+        background-color: darkslateblue;
+        border-radius: 8px;
+        box-shadow: 1px 2px 5px #000000; 
+    }
+    .btn-info:hover{
+        background-color: rgb(128, 109, 251);
+    }
+</style>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        
+        
+    <!-- BARRA DE ALERTA -->
+    <br>
+    <div class="alert alert-success">
+        <strong> Bem Vindo, Visitante
+            <a href="#">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </strong>
+    </div>
+
+   
+
+   
+    
+    <div class="panel panel-default ">
+        
+        <!-- CABEÇALHO -->
+
+        <div class="panel-body" style="background-color: #f2f2f2">
+           
+                <h1 class="text-center">Rede Animal</h1>
+            </div>
+            
+          <!-- BARRA DE MENU -->
+   
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Mural</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">ONGs</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+               
+                <!-- LOGIN -->
+                <div class="col-lg-5"></div>
+
+                  <form class="form-inline">
+                    <div class="form-group form-group-sm">  
+                      <div class="col-sm-14">               
+                        <input type="text" class="form-control" id="usuario" placeholder="Usuario">     
+                        <input type="password" class="form-control" id="senha" placeholder="Senha">               
+                        <button type="submit" class="btn btn-info navbar-btn form-control" id="botaoEntrar">Entrar</button>         
+                      </div>       
+                        <!-- <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div> -->    
+                    
+                    </div>    
+              </form>               
+                    <!-- <button class="btn btn-info navbar-btn">Button</button> -->
+            </div>
+        </nav>
+
+        
+        <!-- CONTEÚDO -->
+        <br>
+        <div class="row">
+            <div class="col-sm-3 " ></div>
+            <div class="col-sm-6 ">
+                <!-- Título da imagem -->
+                <h2 class="text-center">Título da Imagem</h2>
+                <!-- Imagem -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img id="imagem" src="imagens/caes.jpeg" alt="sem_imagem" width="660px" max-width="initial" max-height="fit-content">
+                    </div>
+                </div>
+                <!-- Texto da Imagem -->
+                <div class="text-center">
+                    <article> ivamus viverra sed diam vel consequat.
+                     Morbi scelerisque metus metus, ut luctus ligula lobortis ac.
+                      Aliquam dictum commodo libero at consequat.
+                       Sed metus est, dignissim quis augue at, egestas laoreet libero. Aenean nec aliquet ante. Ut quis dapibus lorem. Suspendisse sed mi enim. Maecenas ultrices imperdiet aliquet. Nam faucibus tempus lorem in luctus. Suspendisse faucibus, neque at finibus iaculis, libero magna ornare mi, ut suscipit ligula nulla eu massa. Curabitur fermentum, lacus id ornare ultrices, justo ligula lobortis ligula, nec suscipit ex purus nec urna. Vestibulum molestie elit non leo consequat, sed rutrum nisl gravida. Aenean metus eros, imperdiet eget nulla eget, tristique lobortis nisl. Sed commodo mattis velit a facilisis
+                    </article>
+                    </div>
+            </div>
+            <div class="col-sm-3 "></div>
+        </div>
+        <br>
+
+        <!-- ROPAPÉ --> 
+        <footer >
+                 <hr>        
+                 <div class="text-center">&copy;2018 Rede Animal </div>
+        </footer>
+
+    </div> 
+</div>
+</div>
+
+
+
+
+
+</body>
+
+</html>
