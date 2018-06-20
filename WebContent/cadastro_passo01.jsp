@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,15 +12,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/principal.js"></script>
-    <title>Rede Animal</title>
+<title>Cadastro - Verificar o CPF</title>
 </head>
-
-
 <body>
-        
-    <!-- BARRA DE ALERTA -->   
+<!-- BARRA DE ALERTA -->   
     <div class="alert alert-success">
-        <strong> Bem-vindo, Visitante
+        <strong> ${resultadoCpf}
             <a href="#">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
@@ -27,10 +26,10 @@
     
     <!-- <div class=""> -->
         
-        <!-- CABEÃ‡ALHO -->
+        <!-- CABEÇALHO -->
        
              <div class="jumbotron">
-              <h1>Rede Animal</h1> 
+              <a href="index.jsp"><h1>Rede Animal</h1></a> 
               <p>Aenean nec aliquet ante. Ut quis dapibus lorem. Suspendisse sed mi enim. Maecenas ultrices imperdiet aliquet. Nam faucibus tempus lorem in luctus.</p> 
             </div>          
           
@@ -56,64 +55,99 @@
                       <li ><a href="#">Quem Somos</a></li>
                       <li><a href="#">Contato</a></li>
                     </ul>
-                    
+                 <!--  
                     <ul class="nav navbar-nav navbar-right">
-                    	<a href="cadastroUsuario.html">NÃ£o tem uma conta? Clique aqui</a>
+                    	<a href="cadastroUsuario.html">Não tem uma conta? Clique aqui</a>
                     	<form class="navbar-form navbar-left" method="post" action="ServletVerificaLogin">
                     		<div class="form-group">
-                    			<input type="text" name="username" class="form-control" placeholder="UsuÃ¡rio">
+                    			<input type="text" name="usuario" class="form-control" placeholder="Usuário">
                     		</div>
                             <div class="form-group">
                             	<input type="password" name="senha" class="form-control" placeholder="Senha">
                             </div>
                             <button type="submit" class="btn btn-default">Entrar</button>
                         </form>
-                    </ul>
+                    </ul>                                 -->   
                   </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
               </nav>
             
            
-        <!-- CONTEÃšDO -->
+        <!-- CONTEÚDO -->
         <div class="container-fluid"> 
         
         <div class="row">
             <div class="col-sm-3 " ></div>
             <div class="col-sm-6 ">
 
-                <!-- TÃ­tulo da imagem -->
-                <h2 class="text-center">TÃ­tulo da Imagem</h2>
+                <!-- Título da imagem -->
+                <h2 class="text-center">Cadastro - Verificar o CPF</h2>
 
-                <!-- Imagem -->
+				<script>
+				// código de verificação de CPF da receita federal 
+				// http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/funcoes.js
+				
+			 function validadorCampoCpf(){
+					
+					var Soma;
+				    var Resto;
+				    var MensagemErroCpf = "CPF incorreto. Digite corretamente o CPF";
+				    Soma = 0;					
+					
+					if ((formCpf.cpf.value == "")||(formCpf.cpf.value == null)){
+						window.alert("Campos não preenchidos");
+					} else {
+						for (i=1; i<=9; i++){
+					    	Soma = Soma + parseInt(formCpf.cpf.value.substring(i-1, i)) * (11 - i);
+					    	Resto = (Soma * 10) % 11;
+					    }
+						
+						if ((Resto == 10) || (Resto == 11))  {
+					    	Resto = 0;
+					    }
+						
+						Soma = 0;
+						
+						for (i = 1; i <= 10; i++) {
+							Soma = Soma + parseInt(formCpf.cpf.value.substring(i-1, i)) * (12 - i);				 
+						    Resto = (Soma * 10) % 11;
+						}
+						
+						if ((Resto == 10) || (Resto == 11)) {
+							Resto = 0;
+						}
+						
+						if ((formCpf.cpf.value == "00000000000") || (Resto != parseInt(formCpf.cpf.value.substring(9, 10))) || (Resto != parseInt(formCpf.cpf.value.substring(10, 11)))) {
+							window.alert(MensagemErroCpf);
+						} else { 
+							document.formCpf.submit();
+						}	
+												
+					}
+				}
+						
+					
+				/* 	 function validadorCampoCpf(){
+						if ((formCpf.cpf.value == "")||(formCpf.cpf.value == null)){
+							window.alert("Campos não preenchidos");
+						} else {
+							document.formCpf.submit();
+						}			    
+					}   */
+					
+				</script>
+
+				<!-- Imagem -->
                 <div class="panel panel-default">
-                    <div class="panel-body" id="imagens">
-                        <img id="imagem" class="img-rounded img-responsive" src="imagens/caes.jpeg" alt="sem_imagem" width="660px" max-width="initial" max-height="fit-content">
+                    <div class="panel-body" id="cadastro-usuario">                        
+                    	<form name="formCpf" class="navbar-form navbar-left" method="post" action="ServletCadastroUsuario">
+                    		<div class="form-group">                    		
+                    			CPF: <input id="cpf" type="text" name="cpf" class="form-control" ><br>                    		
+                            	<input type="button" value="Verificar" class="btn btn-default" onclick="validadorCampoCpf()"><br>                            	
+                           </div>
+                        </form>
                     </div>
                 </div>
-
-                <!-- Texto da Imagem -->
-                <div class="text-center">
-                    <article> ivamus viverra sed diam vel consequat.
-                     Morbi scelerisque metus metus, ut luctus ligula lobortis ac.
-                      Aliquam dictum commodo libero at consequat.
-                       Sed metus est, dignissim quis augue at, egestas laoreet libero. Aenean nec aliquet ante. Ut quis dapibus lorem. Suspendisse sed mi enim. Maecenas ultrices imperdiet aliquet. Nam faucibus tempus lorem in luctus. Suspendisse faucibus, neque at finibus iaculis, libero magna ornare mi, ut suscipit ligula nulla eu massa. Curabitur fermentum, lacus id ornare ultrices, justo ligula lobortis ligula, nec suscipit ex purus nec urna. Vestibulum molestie elit non leo consequat, sed rutrum nisl gravida. Aenean metus eros, imperdiet eget nulla eget, tristique lobortis nisl. Sed commodo mattis velit a facilisis
-                    </article>
-                </div>
-            </div>
-        <!--    <div class="col-sm-3 ">
-                <button type="button" class="btn btn-info btn-circle btn-xl "><i class="glyphicon glyphicon-plus "></i></button>
-            </div>  --> 
-        </div>
-        <br>
-                
-        <!-- ROPAPÃ‰ --> 
-        <footer >
-                 <hr>        
-                 <div class="text-center">&copy;2018 Rede Animal </div>
-        </footer>
-    
-        </div> 
-
 
 </body>
 </html>

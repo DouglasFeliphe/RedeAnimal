@@ -1,6 +1,12 @@
 package model;
 
+import model.*;
+import DAO.*;
+
 public class RedeAnimal {
-	//Type field1;
-	//Type field2;
+	
+	public void logar(String username, String senha) {
+		
+	}
+
 }

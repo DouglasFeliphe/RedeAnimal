@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +13,21 @@
     <script src="js/principal.js"></script>
     <title>Rede Animal</title>
 </head>
-
-
 <body>
         
     <!-- BARRA DE ALERTA -->   
     <div class="alert alert-success">
-        <strong> Bem-vindo, Visitante
+        <strong> ${mensagem} ${resultadoLogin.nome}
             <a href="#">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </strong>
+        <a href="index.jsp"><button class="btn btn-default">Sair</button></a>
     </div>
     
     <!-- <div class=""> -->
         
-        <!-- CABEÃ‡ALHO -->
+        <!-- CABEÇALHO -->
        
              <div class="jumbotron">
               <h1>Rede Animal</h1> 
@@ -57,32 +57,31 @@
                       <li><a href="#">Contato</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                    	<a href="cadastroUsuario.html">NÃ£o tem uma conta? Clique aqui</a>
+              <!--      <ul class="nav navbar-nav navbar-right">
                     	<form class="navbar-form navbar-left" method="post" action="ServletVerificaLogin">
                     		<div class="form-group">
-                    			<input type="text" name="username" class="form-control" placeholder="UsuÃ¡rio">
+                    			<input type="text" name="usuario" class="form-control" placeholder="Usuário">
                     		</div>
                             <div class="form-group">
                             	<input type="password" name="senha" class="form-control" placeholder="Senha">
                             </div>
                             <button type="submit" class="btn btn-default">Entrar</button>
                         </form>
-                    </ul>
+                    </ul>  --> 
                   </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
               </nav>
             
            
-        <!-- CONTEÃšDO -->
+        <!-- CONTEÚDO -->
         <div class="container-fluid"> 
         
         <div class="row">
             <div class="col-sm-3 " ></div>
             <div class="col-sm-6 ">
 
-                <!-- TÃ­tulo da imagem -->
-                <h2 class="text-center">TÃ­tulo da Imagem</h2>
+                <!-- Título da imagem -->
+                <h2 class="text-center">Título da Imagem</h2>
 
                 <!-- Imagem -->
                 <div class="panel panel-default">
@@ -100,13 +99,13 @@
                     </article>
                 </div>
             </div>
-        <!--    <div class="col-sm-3 ">
+            <div class="col-sm-3 ">
                 <button type="button" class="btn btn-info btn-circle btn-xl "><i class="glyphicon glyphicon-plus "></i></button>
-            </div>  --> 
+            </div>
         </div>
         <br>
                 
-        <!-- ROPAPÃ‰ --> 
+        <!-- ROPAPÉ --> 
         <footer >
                  <hr>        
                  <div class="text-center">&copy;2018 Rede Animal </div>
@@ -117,3 +116,5 @@
 
 </body>
 </html>
+	
+	
