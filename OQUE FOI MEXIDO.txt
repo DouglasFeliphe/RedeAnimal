@@ -1,0 +1,14 @@
+ServletCadastroAnimal
+
+AnimalDAO
+
+AnimalService
+
+indexLogin.jsp 
+
+
+tipo: 'Cachorro','Gato','Outros'
+raça: 'SRD(sem raça definida)', 'De Raça'
+sexo do animal: 'Macho, Femea, Não Informado'
+porte: 'pequeno, médio, grande, Não informado'
+obs: todos os campos ficaram 'Não Informados' como default
