@@ -25,10 +25,11 @@
 
 	<!-- BARRA DE ALERTA -->
 	<div class="alert alert-success">
-		<strong> ${mensagem} <a href="#"> <span
+		<strong> Bem Vindo, Visitante <a href="#"> <span
 				class="glyphicon glyphicon-user"></span> 
 		</a>
 		</strong>
+		<a href="cadastro_passo01.jsp"">Não tem uma conta? Clique aqui</a>
 	</div>
 
 	<!-- <div class=""> -->
@@ -42,7 +43,6 @@
 			lorem in luctus.</p>
 	</div>
 
-
 	<!-- BARRA DE MENU -->
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -55,7 +55,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Mural</a>
+			<a class="navbar-brand" href="index.jsp">Mural</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,7 +82,7 @@
 					<button type="submit" class="btn btn-default">Entrar</button>
 				</form>
 			</ul>
-			<a href="cadastro_passo01.jsp"">Não tem uma conta? Clique aqui</a>
+			
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
@@ -121,7 +121,8 @@
 					ultrices, justo ligula lobortis ligula, nec suscipit ex purus nec
 					urna. Vestibulum molestie elit non leo consequat, sed rutrum nisl
 					gravida. Aenean metus eros, imperdiet eget nulla eget, tristique
-					lobortis nisl. Sed commodo mattis velit a facilisis </article>
+					lobortis nisl. Sed commodo mattis velit a facilisis
+					 </article>
 				</div>
 			</div>
 			<!--    <div class="col-sm-3 ">

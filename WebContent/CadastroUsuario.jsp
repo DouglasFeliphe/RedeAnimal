@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/principal.js"></script>
+    <script src="js/index.js"></script>
 	<title>Cadastro</title>
 </head>
 <body>
@@ -45,7 +45,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Mural</a>
+                    <a class="navbar-brand" href="index.jsp">Mural</a>
                   </div>
               
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,24 +85,29 @@
 
                 <!-- Imagem -->
                 <div class="panel panel-default">
-                    <div class="panel-body" id="cadastro-usuario">                        
-                    	<form class="navbar-form navbar-left" method="post" action="ServletCadastroUsuario">
+                    <div class="panel-body" id="cadastro-usuario">  
+                        <div class="col-sm-2"></div> 
+                        <div class="col-sm-8">                   
+                    	<form class="form-horizontal" method="post" action="ServletCadastroUsuario">
                     		<div class="form-group">
-                    		Nome completo: <input type="text" name="nome" class="form-control" placeholder="Nome completo"><br>
-                    		CPF: <input type="text" name="cpf" class="form-control" placeholder="CPF"><br>
-                    		Endereço: <input type="text" name="endereco" class="form-control" placeholder="Endereço"><br>
-                    		Cidade: <input type="text" name="cidade" class="form-control" placeholder="Cidade"><br>
-                    		CEP: <input type="text" name="cep" class="form-control" placeholder="99.999-999" pattern="[0-9]{2}\.?[0-9]{3}\-?[0-9]{3}"> Use . e - entre os números<br>
-                    		Telefone: <input type="tel" name="telefone" class="form-control" placeholder="(99)99999-9999" pattern="\(?[0-9]{2}\)?[0-9]{5}\-?[0-9]{4}"> Use () e - entre os números<br>
+                    		Nome completo: <input type="text" name="nome" class="form-control" placeholder="Nome completo" required><br>
+                    		CPF: <input type="text" name="cpf" class="form-control" placeholder="CPF" required><br>
+                    		Endereço: <input type="text" name="endereco" class="form-control" placeholder="Endereço" required><br>
+                    		Cidade: <input type="text" name="cidade" class="form-control" placeholder="Cidade" required><br>
+                    		CEP: <input type="text" name="cep" class="form-control" placeholder="99.999-999" pattern="[0-9]{2}\.?[0-9]{3}\-?[0-9]{3}" required> Use . e - entre os números<br>
+                    		Telefone: <input type="tel" name="telefone" class="form-control" placeholder="(99)99999-9999" pattern="\(?[0-9]{2}\)?[0-9]{5}\-?[0-9]{4}" required> Use () e - entre os números<br>
                     		E-mail: <input type="email" name="email" class="form-control" placeholder="usuario@email.com" 
-                    		pattern="^([-a-zA-Z0-9_-]*@(gmail|yahoo|ymail|rocketmail|bol|hotmail|live|msn|ig|globomail|oi|pop|inteligweb|r7|folha|zipmail).(com|info|gov|net|org|tv)(.[-a-z]{2})?)*$"><br>                    		
-                    		Username: <input type="text" name="username" class="form-control" placeholder="Username"><br>
-                    		Senha: <input type="password" name="senha" class="form-control" placeholder="Senha"><br>
-                            Confirme a senha: <input type="password" name="senha2" class="form-control" placeholder="Confirmar a Senha"><br>
-                            <button type="submit" class="btn btn-default">Enviar</button>
+                    		pattern="^([-a-zA-Z0-9_-]*@(gmail|yahoo|ymail|rocketmail|bol|hotmail|live|msn|ig|globomail|oi|pop|inteligweb|r7|folha|zipmail).(com|info|gov|net|org|tv)(.[-a-z]{2})?)*$" required><br>                    		
+                    		Username: <input type="text" name="username" class="form-control" placeholder="Username" required><br>
+                    		Senha: <input type="password" name="senha" class="form-control" placeholder="Senha" required><br>
+                            Confirme a senha: <input type="password" name="senha2" class="form-control" placeholder="Confirmar a Senha" required><br>
+                            <button type="submit" class="btn btn-success">Enviar</button>
                            </div>
+                        </div> 
+                        <div class="col-sm-2"></div> 
                         </form>
                     </div>
                 </div>
+              
 </body>
 </html>
