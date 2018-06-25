@@ -21,6 +21,18 @@ public class Post {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 	public String getMensagem() {
 		return mensagem;
 	}
@@ -75,18 +87,5 @@ public class Post {
 	public void setCpf_usuario(String cpf_usuario) {
 		this.cpf_usuario = cpf_usuario;
 	}
-	public String getImagem() {
-		return imagem;
-	}
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-    
     
 }

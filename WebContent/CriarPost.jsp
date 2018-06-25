@@ -4,15 +4,14 @@
 <%
 	//Usuario usuario = new Usuario();
 %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/CriarPost.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -21,7 +20,6 @@
 
 <title>Criar Postagem</title>
 </head>
-
 <body>
 
 	<!-- BARRA DE ALERTA -->
@@ -43,32 +41,31 @@
 			lorem in luctus.</p>
 	</div>
 
-
 	<!-- BARRA DE MENU -->
 	<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.jsp">Mural</a>
-		</div>
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.jsp">Mural</a>
+			</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="#">ONGs <span class="sr-only">(current)</span>
-				</a></li>
-				<li><a href="#">Quem Somos</a></li>
-				<li><a href="#">Contato</a></li>
-			</ul>
-			<!--  
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="#">ONGs <span class="sr-only">(current)</span>
+					</a></li>
+					<li><a href="#">Quem Somos</a></li>
+					<li><a href="#">Contato</a></li>
+				</ul>
+				<!--  
                     <ul class="nav navbar-nav navbar-right">
                     	<a href="cadastroUsuario.html">N�o tem uma conta? Clique aqui</a>
                     	<form class="navbar-form navbar-left" method="post" action="ServletVerificaLogin">
@@ -81,11 +78,11 @@
                             <button type="submit" class="btn btn-default">Entrar</button>
                         </form>
                     </ul>                                 -->
+			</div>
+			<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-	<!-- /.container-fluid --> </nav>
-
+		<!-- /.container-fluid -->
+	</nav>
 
 	<!-- CONTEÚDO -->
 	<div class="container-fluid">
@@ -105,13 +102,12 @@
 						<div class="col-sm-2"></div>
 						<div class="col-sm-8">
 
-							<!-- formulario 'CADASTRO ANIMAL'-->
+							<!-- formulario 'CRIAR POST'-->
 							<form action="ServletCriarPost" method="POST"
 								class="form-horizontal">
 								<fieldset>
 									<!-- Form Name -->
 									<legend>Dados do Animal</legend>
-
 									<!-- inputs-->
 									<div class="form-group">
 										<label class="col-md-4 control-label" for="tipo">Tipo</label>
@@ -165,11 +161,9 @@
 										</div>
 									</div>
 
-								
 
-								<!-- 'DADOS DO POST' -->
 
-								
+									<!-- 'DADOS DO POST' -->
 									<!-- Form Name -->
 									<legend>Dados do Post</legend>
 									<div class="form-group"></div>
@@ -179,24 +173,24 @@
 											da Postagem</label>
 										<div class="col-md-8">
 											<input type="text" class="form-control input-md"
-												name="titulo" placeholder="título da postagem"
-												required>
+												name="titulo" placeholder="título da postagem" required>
 										</div>
 									</div>
 
 									<div class="form-group">
-										<label for="imagem" class="col-md-4 control-label">Selecione
+										<label for="imagem" class="col-md-4 control-label ">Selecione
 											a imagem:</label>
 										<div class="col-md-8">
-											<input type="file" name="imagem" required>
+											<input type="file" name="imagem" multiple required>
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-4 control-label" for="passwordinput">Mensagem</label>
-										<!-- <div class="col-md-8"> -->
-										<textarea class="form-control" rows="5" maxlength="50" name="mensagem"required></textarea>
-										<!-- </div> -->
+										<div class="col-md-8">
+											<textarea class="form-control" rows="5" maxlength="255"
+												name="mensagem" required></textarea>
+										</div>
 									</div>
 
 									<div class="form-group">
@@ -209,7 +203,8 @@
 
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="submit" class="btn btn-success" value="Criar Postagem"/>
+											<input type="submit" class="btn btn-success"
+												value="Criar Postagem" />
 										</div>
 									</div>
 

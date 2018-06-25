@@ -7,16 +7,12 @@ package DAO;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
-import java.io.PrintWriter;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
-
-
 
 public class Conexao {
+	
     public Connection con;
     private Statement stm;
     
@@ -48,9 +44,8 @@ public class Conexao {
         }
     }
     
+    
     // Vai para a servlet
-    
-    
     public String testaConexao() throws ClassNotFoundException {
     	
     	if (conecta()) {

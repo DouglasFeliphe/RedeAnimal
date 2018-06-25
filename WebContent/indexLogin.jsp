@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="java.util.List" import="model.Post"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.List" import="model.Post"
+	import="service.PostService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -28,7 +29,7 @@
 
 	<!-- <div class=""> -->
 
-	<!-- CABE�ALHO -->
+	<!-- CABEÇALHO -->
 
 	<div class="jumbotron">
 		<h1>Rede Animal</h1>
@@ -65,7 +66,7 @@
 			<!--      <ul class="nav navbar-nav navbar-right">
                     	<form class="navbar-form navbar-left" method="post" action="ServletVerificaLogin">
                     		<div class="form-group">
-                    			<input type="text" name="usuario" class="form-control" placeholder="Usu�rio">
+                    			<input type="text" name="usuario" class="form-control" placeholder="Usuï¿½rio">
                     		</div>
                             <div class="form-group">
                             	<input type="password" name="senha" class="form-control" placeholder="Senha">
@@ -87,40 +88,35 @@
 			<div class="col-sm-6 ">
 
 				<!-- POST -->
-				
-				${post.titulo}<br>
-				${post.imagem}<br>
-				${post.mensagem}<br>
-				${post.data}<br>
-				${post.userName}<br>
-				<hr>
-				${post.tipo}<br>
-				 ${post.raca}<br>
-				  ${post.porte}<br>
-				   ${post.pelagem}<br>
-				    ${post.sexo}<br>
-				 ${post.situacao}<br>
-				 
-				 
-				<!-- Titulo da imagem -->
-				<!-- <h2 class="text-center">T�tulo da Imagem</h2>
+				<%
+					List<Post> lista = (List) request.getAttribute("listaDePosts");
+					if (lista != null) {
+						for (Post p : lista) {
+				%>
+				<!-- Título do Post -->
+				<h2 class="text-center"><%=p.getTitulo()%></h2>
 
-				Imagem
+				<!-- Imagem do Post-->
 				<div class="panel panel-default">
 					<div class="panel-body" id="imagens">
 						<img id="imagem" class="img-rounded img-responsive"
-							src="imagens/caes.jpeg" alt="sem_imagem" width="660px"
+							src="/imagens/<%=p.getImagem()%>" alt="sem_imagem" width="660px"
 							max-width="initial" max-height="fit-content">
 					</div>
 				</div>
-
-				Texto da Imagem
+				
+				<!--  Texto do Post -->
 				<div class="text-center">
-					<article> ivamus viverra sed diam vel consequat. Morbi
-					scelerisque metus metus, ut luctus ligula lobortis ac. Aliquam
-					dictum commodo libero at consequat. Sed metus est, dignissim quis
-					augue at, egestas laoreet libero. </article>
-				</div> -->
+					<article><%=p.getMensagem()%></article>
+				</div>
+
+				<%
+					}
+					} else {
+						out.println("lista vazia");
+					}
+				%>
+
 				<!-- FIM DO POST -->
 
 			</div>
@@ -136,14 +132,13 @@
 		</div>
 		<br>
 
-		<!-- ROPAP� -->
+		<!-- ROPAPÉ -->
 		<footer>
 		<hr>
 		<div class="text-center">&copy;2018 Rede Animal</div>
 		</footer>
 
 	</div>
-
 
 </body>
 </html>
